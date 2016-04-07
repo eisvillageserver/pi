@@ -1,5 +1,3 @@
-# Pi setup Guid
-
 #Pi Initial Setup
 There are several packages required to setup the Pi as a Wireless Access Point with the intention of running our web application
 
@@ -43,9 +41,9 @@ wmm_enabled=0
 ```
 
 2. Edit the file /etc/default/hostapd and change the line:
-* `#DAEMON_CONF=""`
+`#DAEMON_CONF=""`
 to:
-* `DAEMON_CONF="/etc/hostapd/hostapd.conf`
+`DAEMON_CONF="/etc/hostapd/hostapd.conf`
 
 
 #Configuring DHCP Server (Using dnsmasq)
@@ -61,25 +59,25 @@ dhcp-range=192.168.1.50,192.168.1.150,12h
 The DNS server will automatically check hosts file to resolve any internal domains
 
 1. Edit the file /etc/hosts and add the line to the end:
-* `192.168.1.1	apoint.io`
+`192.168.1.1	apoint.io`
 
 #Confguring files for GSM (fona from adafruit)
 
 1. In the directory /etc/ppp/peers , download a file using the command:
-* `wget https://raw.githubusercontent.com/adafruit/FONA_PPP/master/fona`
+`wget https://raw.githubusercontent.com/adafruit/FONA_PPP/master/fona`
 
 2. In the downloaded file, edit the lines:
-* `connect "/usr/sbin/chat -v -f /etc/chatscripts/gprs -T ****"`
+`connect "/usr/sbin/chat -v -f /etc/chatscripts/gprs -T ****"`
 Replace the **** with the APN value of the network carrier. This can be found on the
 network carriers website or provided by the network carriers support desk.
 
-* `#/dev/ttyAMA0`
+`#/dev/ttyAMA0`
 to
-* `/dev/ttyAMA0`
+`/dev/ttyAMA0`
 
 #Clone the Web application
 1. Clone our web application using git
-*  `Git clone https://github.com/eisvillageserver/integration.git`
+`Git clone https://github.com/eisvillageserver/integration.git`
 
 #Note
 * All the modified file are in the repository in directory /etc
