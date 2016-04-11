@@ -79,6 +79,16 @@ to
 1. Clone our web application using git
 `Git clone https://github.com/eisvillageserver/integration.git`
 
+#Initializing python script on boot
+1. In the file /etc/rc.local , add the lines
+```
+cd /
+cd home/pi/integration/
+sudo python run.py --run &
+cd /
+```
+Although this works ,daemonizing the script is recommended 
+
 #Note
 * All the modified file are in the repository in directory /etc
 * When Downloading new content to Raspberry Pi, disable the DHCP server with the command
